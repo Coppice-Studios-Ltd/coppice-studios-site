@@ -131,6 +131,19 @@
   .store-btn small{display:block; font-size:10.5px; letter-spacing:.02em; color:#C6DCD0;}
   .store-btn b{display:block; font-size:15px; font-weight:600;}
   .store-btn:hover{background:#000000;}
+  .store-btn.soon{background:transparent; color:var(--ink); border:1.5px dashed #B9B08A; cursor:default;}
+  .store-btn.soon small{color:var(--lichen);}
+  .store-btn.soon:hover{background:transparent;}
+  .store-btn.soon svg rect{stroke:var(--ink);}
+  a.product-shot{text-decoration:none;}
+  a.product-shot .phone{transition:transform .2s ease;}
+  a.product-shot:hover .phone{transform:translateY(-4px);}
+  a.product-head{text-decoration:none; color:inherit;}
+  a.product-head:hover h3{text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:4px;}
+  .product-head .tag{display:block;}
+  .title-link{color:inherit; text-decoration:none;}
+  .title-link:hover{text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px;}
+  a.product-shot:focus-visible, a.product-head:focus-visible, .title-link:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
   .btn:focus-visible, .store-btn:focus-visible, .product-copy a:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
   .store-note{font-size:13px !important; color:var(--lichen) !important;}
   .store-note a{color:var(--canopy); font-weight:600;}
@@ -251,7 +264,7 @@
             <span class="menu-panel">
               <a class="menu-item" href="little-helper.html">
                 <img src="assets/little-helper/app-icon.png" alt="">
-                <span><strong>Little Helper</strong><small>Parenting app. Out now on Google Play.</small></span>
+                <span><strong>Little Helper</strong><small>Parenting app. Coming soon.</small></span>
               </a>
               <span class="menu-soon">More products coming soon</span>
             </span>
@@ -295,33 +308,30 @@
       <section class="band stone" id="products">
         <div class="measure">
           <p class="kicker">Our products</p>
-          <h2>Little Helper is out now.</h2>
+          <h2><a class="title-link" href="little-helper.html">Little Helper is coming soon.</a></h2>
         </div>
         <div class="product-card">
-          <div class="product-shot">
-            <div class="phone"><img src="assets/little-helper/app-home.jpg" alt="The Little Helper home screen, showing six colourful tiles: Photo Playpen, Rise and Shine Clock, Noise Machine, Finger Paint, Story time and Alphabet Painting."></div>
-          </div>
+          <a class="product-shot" href="little-helper.html" aria-label="Find out more about Little Helper">
+            <div class="phone"><img src="assets/little-helper/app-home.jpg" alt="The Little Helper home screen, showing six colourful tiles: Photo Playpen, Rise and Shine Clock, Noise Machine, Finger Paint, Story Time and Alphabet Painting."></div>
+          </a>
           <div class="product-copy">
-            <div class="product-head">
+            <a class="product-head" href="little-helper.html">
               <img src="assets/little-helper/app-icon.png" alt="">
               <div>
                 <h3>Little Helper</h3>
-                <p class="tag">Parenting app</p>
+                <span class="tag">Parenting app</span>
               </div>
-            </div>
-            <p>We've just launched Little Helper, our parenting app that supports parents by giving them all the essential tools they need in a single, affordable, easy-to-use app.</p>
+            </a>
+            <p>Little Helper is our new parenting app. It supports parents by giving them all the essential tools they need in a single, affordable, easy-to-use app.</p>
             <ul class="tools" aria-label="What's inside">
               <li class="t1">Photo Playpen</li><li class="t2">Rise &amp; Shine Clock</li><li class="t3">Noise Machine</li>
-              <li class="t4">Finger Paint</li><li class="t5">Story time</li><li class="t6">Alphabet Painting</li>
+              <li class="t4">Finger Paint</li><li class="t5">Story Time</li><li class="t6">Alphabet Painting</li>
             </ul>
             <div class="ctas">
               <a class="btn" href="little-helper.html">Find out more <span aria-hidden="true">→</span></a>
-              <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.coppicestudios.littlehelper" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="5" y="1.5" width="10" height="17" rx="2.2" fill="none" stroke="#FFFFFF" stroke-width="1.5"/><path d="M10 6v6m0 0-2.4-2.4M10 12l2.4-2.4" fill="none" stroke="#D89B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span><small>Get it on</small><b>Google Play</b></span>
-              </a>
+              <span class="store-btn soon" aria-disabled="true"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="5" y="1.5" width="10" height="17" rx="2.2" fill="none" stroke="#FFFFFF" stroke-width="1.5"/><path d="M10 6v6m0 0-2.4-2.4M10 12l2.4-2.4" fill="none" stroke="#D89B2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Coming soon to</small><b>Google Play</b></span></span>
             </div>
-            <p class="store-note">Coming soon to the App Store. <a href="little-helper.html#video">Watch the 70&#8209;second intro</a></p>
+            <p class="store-note">Also coming soon to the App Store. <a href="little-helper.html#video">Watch the 70&#8209;second intro</a></p>
           </div>
         </div>
         <div class="soon-card">
