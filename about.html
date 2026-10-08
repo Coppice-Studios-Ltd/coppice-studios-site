@@ -152,6 +152,43 @@
     .nav{padding:14px 18px;} .nav .links{gap:16px;}
     .foot{padding:22px 18px;}
   }
+
+  /* Our Products dropdown */
+  .nav .links{align-items:center;}
+  .has-menu{position:relative; display:inline-flex;}
+  .menu-btn{
+    font:inherit; font-weight:600; letter-spacing:inherit; color:#B9D3C5;
+    background:none; border:0; padding:0; cursor:pointer;
+    display:inline-flex; align-items:center; gap:0; white-space:nowrap;
+  }
+  .menu-btn svg{margin-left:5px;}
+  .menu-btn:hover, .has-menu.open .menu-btn, .menu-btn[data-current]{color:#FFFFFF;}
+  .menu-btn:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .menu-btn svg{transition:transform .15s ease;}
+  .has-menu.open .menu-btn svg{transform:rotate(180deg);}
+  .menu{position:absolute; top:100%; right:-72px; padding-top:14px; z-index:20; display:none;}
+  .has-menu.open .menu{display:block;}
+  @media (hover:hover){ .has-menu:hover .menu{display:block;} .has-menu:hover .menu-btn svg{transform:rotate(180deg);} }
+  .menu-panel{
+    width:272px; background:var(--paper); border-radius:10px; padding:8px;
+    box-shadow:0 14px 34px rgba(10,64,38,.22), 0 2px 6px rgba(10,64,38,.12);
+    display:flex; flex-direction:column; gap:2px;
+  }
+  .nav .links .menu-item{
+    display:flex; align-items:center; gap:12px; padding:10px; border-radius:7px;
+    color:var(--ink); text-decoration:none; font-weight:400;
+  }
+  .nav .links .menu-item:hover{background:var(--pale); color:var(--ink);}
+  .nav .links .menu-item[aria-current]{background:var(--pale); color:var(--ink);}
+  .menu-item img{width:40px; height:40px; border-radius:10px; flex:none; display:block;}
+  .menu-item strong{display:block; font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:15.5px; color:var(--canopy); line-height:1.2;}
+  .menu-item small{display:block; font-size:12.5px; color:var(--lichen); line-height:1.35; margin-top:2px;}
+  .menu-soon{
+    margin:4px 0 0; padding:10px 10px 6px; border-top:1px solid var(--pale);
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--lichen); font-weight:400;
+  }
+    @media (max-width:440px){ .nav .links .long{display:none;} .nav{padding:14px 16px;} .nav .links{gap:14px; font-size:14.5px;} .wordmark{gap:8px;} .wordmark span{font-size:15px; white-space:nowrap;} }
 </style>
   </head>
   <body>
@@ -168,6 +205,18 @@
       </span>
       <span class="links">
         <a href="index.html">Home</a>
+        <span class="has-menu" data-change="New: Our Products menu">
+          <button type="button" class="menu-btn" aria-expanded="false" aria-controls="products-menu"><span class="long">Our&nbsp;</span>Products<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="menu" id="products-menu">
+            <span class="menu-panel">
+              <a class="menu-item" href="little-helper.html">
+                <img src="assets/little-helper/app-icon.png" alt="">
+                <span><strong>Little Helper</strong><small>Parenting app. Out now on Google Play.</small></span>
+              </a>
+              <span class="menu-soon">More products coming soon</span>
+            </span>
+          </span>
+        </span>
         <a href="about.html" aria-current="page">About</a>
       </span>
     </nav>
@@ -251,5 +300,16 @@
         </div>
       </footer>
 
-  </body>
+  
+<script>
+(function(){
+  var dd=document.querySelector('.has-menu'); if(!dd) return;
+  var btn=dd.querySelector('.menu-btn');
+  function set(o){dd.classList.toggle('open',o); btn.setAttribute('aria-expanded',o?'true':'false');}
+  btn.addEventListener('click',function(e){e.stopPropagation(); set(!dd.classList.contains('open'));});
+  document.addEventListener('click',function(e){ if(!dd.contains(e.target)) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && dd.classList.contains('open')){ set(false); btn.focus(); } });
+})();
+</script>
+</body>
   </html>
