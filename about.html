@@ -112,6 +112,20 @@
 }
   .val p{margin:0; font-size:14px; line-height:1.6; color:#4A5A50;}
 
+  .points{display:flex; flex-direction:column; gap:0; margin-top:34px; max-width:860px; margin-inline:auto;}
+  .point{
+        display:grid; grid-template-columns:220px 1fr; gap:22px;
+    padding:24px 0; border-top:1px solid var(--sage);
+    align-items:baseline;
+  }
+  .point:last-child{border-bottom:1px solid var(--sage);}
+  .point h3{
+        font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:18px;
+    margin:0; color:var(--canopy);
+}
+  .point p{margin:0; font-size:14.5px; line-height:1.58; color:#415047; max-width:54ch;}
+  @media (max-width:820px){ .point{grid-template-columns:1fr; gap:6px;} }
+
   .contact{
         background:var(--sapling); color:#FFFFFF; padding:42px 28px;
             display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;
@@ -205,7 +219,7 @@
       </span>
       <span class="links">
         <a href="index.html">Home</a>
-        <span class="has-menu" data-change="New: Our Products menu">
+        <span class="has-menu">
           <button type="button" class="menu-btn" aria-expanded="false" aria-controls="products-menu"><span class="long">Our&nbsp;</span>Products<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <span class="menu" id="products-menu">
             <span class="menu-panel">
@@ -276,6 +290,27 @@
           <p>High-quality products at lightning speed, and the discipline to stay pointed at the right things.</p>
         </div>
       </div>
+    </section>
+
+      <section class="band paper">
+      <div class="measure">
+        <p class="kicker">How we work</p>
+    <h2>Focused on quality.</h2>
+    </div>
+    <div class="points">
+        <div class="point">
+          <h3>Built in-house</h3>
+          <p>Design, code, art and audio all sit with the two of us. No handoffs, no agencies, nothing lost in translation.</p>
+        </div>
+        <div class="point">
+        <h3>Speed of execution</h3>
+      <p>One of our key differentiators is our ability to move faster than everyone else without compromising quality.</p>          
+        </div>
+        <div class="point">
+        <h3>Customer first</h3>
+        <p>Our products and our roadmap are built around what has the greatest positive impact for our customers.</p>      
+        </div>
+    </div>
     </section>
 
     <section class="contact" id="contact">
